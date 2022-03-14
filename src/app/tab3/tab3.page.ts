@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 export class Tab3Page {
 
   constructor() {}
-
+  tuwas() {
+    alert("Hallo!");
+    console.log("Hallo Console!");
+  }
 }
