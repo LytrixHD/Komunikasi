@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
           this.response = 'Welcome user with Id: ' + response.id;
           //user.id = response.id
           //this.demoService.user = user;
-           this.router.navigate( ['/']);
+           this.router.navigate( ['/tabs/tab1']);
         }
          else{
            this.response = response.status;
