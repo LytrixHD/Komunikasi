@@ -9,7 +9,15 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  }
+  },
+  {
+    path: 'klassenliste',
+    loadChildren: () => import('./klassenliste/klassenliste.module').then( m => m.KlassenlistePageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
 
 ];
 
