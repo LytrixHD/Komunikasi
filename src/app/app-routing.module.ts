@@ -22,6 +22,14 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
   },
+  {
+    path: 'klasse-erstellen',
+    loadChildren: () => import('./klasse-erstellen/klasse-erstellen.module').then( m => m.KlasseErstellenPageModule)
+  },
+  {
+    path: 'klasse-erstellen',
+    loadChildren: () => import('./klasse-erstellen/klasse-erstellen.module').then( m => m.KlasseErstellenPageModule)
+  },
 
 ];
 

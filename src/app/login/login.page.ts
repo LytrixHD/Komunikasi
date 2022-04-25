@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
-import { UserModel } from '../model/user-model';
+import {UserModel} from '../model/user-model';
 import {Router} from '@angular/router';
 
 @Component({
