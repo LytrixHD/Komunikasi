@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'klasse-erstellen',
     loadChildren: () => import('./klasse-erstellen/klasse-erstellen.module').then( m => m.KlasseErstellenPageModule)
   },
+  {
+    path: 'klassen-tab',
+    loadChildren: () => import('./klassen-tab/klassen-tab.module').then( m => m.KlassenTabPageModule)
+  },
 
 ];
 

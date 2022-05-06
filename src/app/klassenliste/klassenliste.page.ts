@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./klassenliste.page.scss'],
 })
 export class KlassenlistePage implements OnInit {
+  constructor() {}
 
-  constructor() { }
 
   ngOnInit() {
   }
-
 }

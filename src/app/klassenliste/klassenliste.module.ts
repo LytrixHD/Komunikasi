@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { KlassenlistePageRoutingModule } from './klassenliste-routing.module';
 
 import { KlassenlistePage } from './klassenliste.page';
+import {KlasseComponent} from '../klasse/klasse.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { KlassenlistePage } from './klassenliste.page';
     IonicModule,
     KlassenlistePageRoutingModule
   ],
-  declarations: [KlassenlistePage]
+    declarations: [KlassenlistePage, KlasseComponent]
 })
 export class KlassenlistePageModule {}
