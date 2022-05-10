@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import {HeroService} from '../hero.service';
 import {ActivatedRoute} from '@angular/router';
 import {KlassenlisteModel} from '../model/klassenliste-model';
-import {FaecherModel} from "../model/faecher-model";
+import {FaecherModel} from '../model/faecher-model';
 
 @Component({
   selector: 'app-klassen-details',
@@ -13,7 +13,7 @@ import {FaecherModel} from "../model/faecher-model";
 })
 export class KlassenDetailsComponent implements OnInit {
 
-  klassen: KlassenlisteModel | undefined;
+  klasse: KlassenlisteModel | undefined;
   faecher: FaecherModel[] = [];
 
   constructor(
@@ -28,12 +28,11 @@ export class KlassenDetailsComponent implements OnInit {
   }
 
   getKlasse(){
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getKlasse(id).subscribe(klasse => this.klassen = klasse);
+    const id = Number(this.route.snapshot.paramMap.get('klassenId'));
+    this.heroService.getKlasse(id).subscribe(klasse => this.klasse = klasse);
   }
   getFaecher(){
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getFaecher(this.klassen.name).subscribe(faecher => this.faecher = faecher);
+    this.heroService.getFaecher(this.klasse.id).subscribe(faecher => this.faecher = faecher);
   }
   goBack(): void {
     this.location.back();

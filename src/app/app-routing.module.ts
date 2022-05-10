@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {KlassenDetailsComponent} from './klassen-details/klassen-details.component';
+import {FachDetailsComponent} from './fach-details/fach-details.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.Tab1PageModule)
   },
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'klassenDetails/:id', component: KlassenDetailsComponent}
+  { path: 'klassenDetails/:klassenId', component: KlassenDetailsComponent},
+  { path: 'fachDetails/:klassenId/:fachId', component: FachDetailsComponent}
 
 ];
 

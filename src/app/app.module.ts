@@ -8,12 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{DashboardComponent} from './dashboard/dashboard.component';
 import{KlassenDetailsComponent} from './klassen-details/klassen-details.component';
+import{FachDetailsComponent} from './fach-details/fach-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent,DashboardComponent, KlassenDetailsComponent],
+  declarations: [AppComponent,DashboardComponent, KlassenDetailsComponent,FachDetailsComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
