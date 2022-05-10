@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {KlassenDetailsComponent} from './klassen-details/klassen-details.component';
 
 const routes: Routes = [
   {
@@ -11,10 +13,6 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'klassenliste',
-    loadChildren: () => import('./klassenliste/klassenliste.module').then( m => m.KlassenlistePageModule)
-  },
-  {
     path: 'startPage',
     loadChildren: () => import('./startPage/startPage.module').then(m => m.HomePageModule)
   },
@@ -23,17 +21,11 @@ const routes: Routes = [
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
   },
   {
-    path: 'klasse-erstellen',
-    loadChildren: () => import('./klasse-erstellen/klasse-erstellen.module').then( m => m.KlasseErstellenPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.Tab1PageModule)
   },
-  {
-    path: 'klasse-erstellen',
-    loadChildren: () => import('./klasse-erstellen/klasse-erstellen.module').then( m => m.KlasseErstellenPageModule)
-  },
-  {
-    path: 'klassen-tab',
-    loadChildren: () => import('./klassen-tab/klassen-tab.module').then( m => m.KlassenTabPageModule)
-  },
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'klassenDetails/:id', component: KlassenDetailsComponent}
 
 ];
 

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="danger">
+        <ion-icon name="add-circle-outline" size="large" >
+        </ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <li *ngFor="let klassen of klassen">
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Klasse</ion-card-subtitle>
+          <ion-card-title>{{klassen.name}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-button color="dark" expand="full" routerLink="/klassenDetails/{{klassen.id}}">Ansehen</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+    </li>
+</ion-content>
