@@ -3,12 +3,17 @@ import { KlassenlisteModel, KLASSEN} from './model/klassenliste-model';
 import {Observable, of} from 'rxjs';
 import {FaecherModel, FAECHER} from './model/faecher-model';
 import {AUFGABEN, AufgabenModel} from './model/aufgaben-model';
+import {UserModel} from './model/user-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
 
+  currentUser: UserModel;
+  currentKlasse: KlassenlisteModel;
+  currentFach: FaecherModel;
+  currentAufgabe: AufgabenModel;
   constructor() { }
 
   getKlassen(): Observable<KlassenlisteModel[]> {
@@ -36,5 +41,9 @@ export class HeroService {
   getAufgabe(fachId: number, aufgabenId: number): Observable<AufgabenModel>{
     const aufgabe = AUFGABEN[fachId]?.find(h => h.id === aufgabenId) ?? null;
     return of(aufgabe);
+  }
+
+  setCurrentUser(user: UserModel){
+    this.currentUser = user;
   }
 }

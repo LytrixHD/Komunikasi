@@ -11,14 +11,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) {
   }
-
-  test(){
-    alert('Hallo vom Api-Service');
-  }
   validateLogin(user: UserModel): Observable<any>{
     console.log('Api Service validate Login()');
-
-
     return this.http.post(this.endpoint + '/users' + '/validate/', user);
   }
 }

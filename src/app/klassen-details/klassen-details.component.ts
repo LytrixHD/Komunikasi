@@ -28,8 +28,8 @@ export class KlassenDetailsComponent implements OnInit {
   }
 
   getKlasse(){
-    const id = Number(this.route.snapshot.paramMap.get('klassenId'));
-    this.heroService.getKlasse(id).subscribe(klasse => this.klasse = klasse);
+    const klassenId = Number(this.route.snapshot.paramMap.get('klassenId'));
+    this.heroService.getKlasse(klassenId).subscribe(klasse => this.klasse = klasse);
   }
   getFaecher(){
     this.heroService.getFaecher(this.klasse.id).subscribe(faecher => this.faecher = faecher);

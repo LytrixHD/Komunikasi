@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
+
+import {ActivatedRoute} from '@angular/router';
 import {KlassenlisteModel} from '../model/klassenliste-model';
 import {HeroService} from '../hero.service';
+import {UserModel} from '../model/user-model';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +15,11 @@ import {HeroService} from '../hero.service';
 export class DashboardComponent implements OnInit {
 
   klassen: KlassenlisteModel[] = [];
+  userId: number;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private route: ActivatedRoute,
+              private heroService: HeroService,
+              private location: Location) { }
 
   ngOnInit() {
     this.getKlassen();

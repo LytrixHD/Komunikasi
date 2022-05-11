@@ -13,7 +13,6 @@ export class LoginPage implements OnInit {
   name: string;
   password: string;
   response: string;
-
   constructor(public apiService: ApiService,private router: Router) {
   }
 
@@ -34,7 +33,7 @@ export class LoginPage implements OnInit {
           this.response = 'Welcome user with Id: ' + response.id;
           //user.id = response.id
           //this.demoService.user = user;
-           this.router.navigate( ['/tabs/home']);
+           this.router.navigate( ['/tabs/'+ response.id + '/dashboard']);
         }
          else{
            this.response = response.status;

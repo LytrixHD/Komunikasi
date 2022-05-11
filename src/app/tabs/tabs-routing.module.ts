@@ -5,7 +5,7 @@ import {DashboardComponent} from '../dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'tabs/:userId ' ,
     component: TabsPage,
     children: [
       {
@@ -17,14 +17,11 @@ const routes: Routes = [
         loadChildren: () => import('../user/user.module').then(m => m.UserPageModule)
       },
       {
-        path: 'login',
-        loadChildren: () => import('./../login/login.module').then( m => m.LoginPageModule)
-      },{
       path: 'dashboard', component: DashboardComponent
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/startpage',
         pathMatch: 'full'
       }
     ]
