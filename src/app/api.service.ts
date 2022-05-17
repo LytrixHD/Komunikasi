@@ -7,12 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  readonly endpoint = 'https://appserei.com/demoApi/api';
+  readonly endpoint = 'http://localhost:8080/demoLogin/api/users/validate';
+  zuSenden = '';
 
   constructor(private http: HttpClient) {
   }
   validateLogin(user: UserModel): Observable<any>{
     console.log('Api Service validate Login()');
-    return this.http.post(this.endpoint + '/users' + '/validate/', user);
+    this.zuSenden = ('{"username": "' + user.name + '", "password": "' + user.password + '"}');
+    return this.http.post(this.endpoint, this.zuSenden);
   }
 }

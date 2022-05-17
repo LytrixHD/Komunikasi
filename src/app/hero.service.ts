@@ -11,9 +11,7 @@ import {UserModel} from './model/user-model';
 export class HeroService {
 
   currentUser: UserModel;
-  currentKlasse: KlassenlisteModel;
   currentFach: FaecherModel;
-  currentAufgabe: AufgabenModel;
   constructor() { }
 
   getKlassen(): Observable<KlassenlisteModel[]> {

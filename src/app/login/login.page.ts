@@ -23,12 +23,9 @@ export class LoginPage implements OnInit {
       console.log(this.password);
       //this.apiService.test();
       const user = new UserModel(this.name, this.password);
-
-      this.apiService.validateLogin(user).subscribe( (response)=> {
-        console.log(response);
-        //console.log(response.status;
+      this.apiService.validateLogin(user).subscribe(response => {
+        //alert(response.status);
         //console.log(response.id);
-
         if (response.id) {
           this.response = 'Welcome user with Id: ' + response.id;
           //user.id = response.id
@@ -36,8 +33,9 @@ export class LoginPage implements OnInit {
            this.router.navigate( ['/tabs/'+ response.id + '/dashboard']);
         }
          else{
-           this.response = response.status;
+           this.response = response.status.toString();
         }
+        this.response = response.status.toString();
       });
     }
 
