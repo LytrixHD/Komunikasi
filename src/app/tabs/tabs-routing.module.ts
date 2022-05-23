@@ -9,15 +9,15 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: ':userId/home',
+        path: 'home',
         loadChildren: () => import('../home/home.module').then(m => m.Tab1PageModule)
       },
       {
-        path: ':userId/user',
+        path: 'user',
         loadChildren: () => import('../user/user.module').then(m => m.UserPageModule)
       },
       {
-      path: ':userId/dashboard', component: DashboardComponent
+      path: 'dashboard', component: DashboardComponent
       },
       {
         path: '',

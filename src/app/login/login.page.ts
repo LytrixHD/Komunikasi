@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
     login() {
-  this.router.navigate( ['/tabs/' + 1 + '/dashboard']);
+  this.router.navigate( ['/tabs/dashboard']);
   /*
       console.log(this.name);
       console.log(this.password);
