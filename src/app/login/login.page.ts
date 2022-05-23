@@ -19,6 +19,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
     login() {
+  this.router.navigate( ['/tabs/' + 1 + '/dashboard']);
+  /*
       console.log(this.name);
       console.log(this.password);
       //this.apiService.test();
@@ -30,13 +32,14 @@ export class LoginPage implements OnInit {
           this.response = 'Welcome user with Id: ' + response.id;
           //user.id = response.id
           //this.demoService.user = user;
-           this.router.navigate( ['/tabs/'+ response.id + '/dashboard']);
+           //Hier kommt routing rein
         }
          else{
            this.response = response.status.toString();
         }
         this.response = response.status.toString();
       });
+   */
     }
 
 

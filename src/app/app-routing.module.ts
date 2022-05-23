@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {KlassenDetailsComponent} from './klassen-details/klassen-details.component';
 import {FachDetailsComponent} from './fach-details/fach-details.component';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.Tab1PageModule)
   },
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'klassenDetails/:klassenId', component: KlassenDetailsComponent},
   { path: 'fachDetails/:klassenId/:fachId', component: FachDetailsComponent}
 

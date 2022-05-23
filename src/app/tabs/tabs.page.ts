@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {HeroService} from '../hero.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-tabs',
@@ -6,7 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
   constructor() {}
 
 }

@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {KlassenlisteModel} from '../model/klassenliste-model';
 import {HeroService} from '../hero.service';
 import {UserModel} from '../model/user-model';
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -19,6 +20,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private heroService: HeroService,
+              private apiService: ApiService,
               private location: Location) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getKlassen(): void {
+    this.apiService.getKlassen(Number(this.route.snapshot.paramMap.get('userId')));
     this.heroService.getKlassen().subscribe(klassen => this.klassen = klassen);
   }
 }

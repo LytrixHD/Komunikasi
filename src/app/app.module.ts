@@ -11,10 +11,11 @@ import{KlassenDetailsComponent} from './klassen-details/klassen-details.componen
 import{FachDetailsComponent} from './fach-details/fach-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {RegisterComponent} from './register/register.component';
 
 
 @NgModule({
-  declarations: [AppComponent,DashboardComponent, KlassenDetailsComponent,FachDetailsComponent],
+  declarations: [AppComponent,DashboardComponent, KlassenDetailsComponent,FachDetailsComponent,RegisterComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

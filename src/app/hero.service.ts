@@ -24,6 +24,7 @@ export class HeroService {
   }
 
   getFaecher(klassenId: number): Observable<FaecherModel[]>{
+    console.log(klassenId);
     const faecher = of(FAECHER[klassenId]);
     return faecher;
   }
