@@ -1,0 +1,94 @@
+HTTP REQUESTS UND DEREN METHODEN!  ~~ Made by OG
+
+Hier die "Inhaltsliste":
+	-Meine Interpretation
+	-Tabelle mit Eigenschaften
+	-Recherchierte Interpretation
+
+Http Methoden:
+	HTTP ist die Hauptmethode zur Kommunikation zwischen Backend und Frontend (bei Angular)
+	Hier sind paar Methoden die verwendet werden können und deren Funktion:
+	request:
+		Ist die Default methode zum schicken an den Server, beinhaltet alle anderen Methoden. Allerdings kann sie nicht vertraut werden, weil nix genaues erwartet wird.
+		Kann leer geschickt werden. In dem Fall erwartet Angular ein httpEvent als Antwort. Diese Antwort bedeutet es kann alles sein.
+		Es kann aber auch ein responseTyp mitgeschickt werden:
+			Json = Speicherformat, Anders als Hiesi es uns erklärt hat, kann ich auch JSON als repsone erwarten. (Müssen schauen wie man JSON in Java schickt)
+			Blob = Ebenfalls wir Arraybuffer; RAW bites. Der Unterschied ist, das Blobs nicht verändert werden können und Arraybuffer schon (dataview)
+				Aber, da Blob nicht verändert wird: kann auf der "disk" oder im chache Memory gespeichert werden -> Arraybuffer nur in Memory
+				Außerdem ist Blob leicht zum Arbeiten, im vergleich zu Arraybuffer, Beides kann in das jeweils andere Konvertiert werden
+			ArrayBuffer = RAW bites: siehe :https://javascript.info/arraybuffer-binary-arrays#summary
+			httpEvent (siehe oben) = Ich erwarte keine bestimmte Response
+			string = Ein text (kennen wir schon)
+	get:
+		Ist ebenfalls von Request abgeleitet, somit hat es die selben Datenformate.
+		Ist nur für das Bekommen von Daten. z.b. Informationen etc. nichts anderes, falls noch eine verarbeitung dabei ist, post benutzen
+	post:
+		Der Unterschied zwischen Post und Put ist mehr Formal als wirklich praxisch. Aber einfach gesagt. Put verwendet man, wenn der Client an den ServerEtwas schickt
+		was quasi neu erstellt wird oder verändert. Bei Post schickt man den Server gewisse Daten, welche er braucht zum verarbeiten.
+		Weil post und Put von Request quasi abgeleitet werden, sind die selben verarbeitungsdaten (response Daten) möglich, außer httpEvent.
+		Bei Put ist jedoch acuh zu bedenken, dass es annimmt idempotent zu sein.
+		Soweit ich es verstehe sollte man daten welche verknüpfungen besitzten etc. nur mit Post schicken, weil der Server hierbei die ID entscheided etc.
+		Währenddessen sollten sämtliche Daten die 2x Existieren dürfen (LOG Files etc.) mit PUT schicken.
+	put:
+		Siehe Post.
+	delete:
+		Löscht den Eintrag
+
+Request method	RFC		Request has payload body	Response has payload body	Safe		Idempotent	Cacheable
+GET			RFC 7231	Optional				Yes					Yes		Yes		Yes
+HEAD			RFC 7231	Optional				No					Yes		Yes		Yes
+POST			RFC 7231	Yes					Yes					No		No		Yes
+PUT			RFC 7231	Yes					Yes					No		Yes		No
+DELETE		RFC 7231	Optional				Yes					No		Yes		No
+CONNECT		RFC 7231	Optional				Yes					No		No		No
+OPTIONS		RFC 7231	Optional				Yes					Yes		Yes		No
+TRACE			RFC 7231	No					Yes					Yes		Yes		No
+PATCH			RFC 5789	Yes					Yes					No		No		No
+
+Hier Nocheinmal alle Definitionen:
+
+*Request methods*
+
+An HTTP/1.1 request made using telnet. The request message, response header section, and response body are highlighted.
+HTTP defines methods (sometimes referred to as verbs, but nowhere in the specification does it mention verb) to indicate the desired action to be 
+performed on the identified resource. What this resource represents, whether pre-existing data or data that is generated dynamically, depends on the 
+implementation of the server. Often, the resource corresponds to a file or the output of an executable residing on the server. The HTTP/1.0 specification 
+defined the GET, HEAD, and POST methods, and the HTTP/1.1 specification[50] added five new methods: PUT, DELETE, CONNECT, OPTIONS, and TRACE. Any client can 
+use any method and the server can be configured to support any combination of methods. If a method is unknown to an intermediate, it will be treated as an unsafe 
+and non-idempotent method. There is no limit to the number of methods that can be defined, which allows for future methods to be specified without breaking existing 
+infrastructure. For example, WebDAV defined seven new methods and RFC 5789 specified the PATCH method.
+
+Method names are case sensitive. This is in contrast to HTTP header field names which are case-insensitive.
+
+GET
+	The GET method requests that the target resource transfer a representation of its state. GET requests should only retrieve data and should have no other effect. 
+	(This is also true of some other HTTP methods.) For retrieving resources without making changes, GET is preferred over POST, as they can be addressed through a URL. 
+	This enables bookmarking and sharing and makes GET responses eligible for caching, which can save bandwidth. 
+	The W3C has published guidance principles on this distinction, saying, "Web application design should be informed by the above principles, 
+	but also by the relevant limitations." See safe methods below.
+HEAD
+	The HEAD method requests that the target resource transfer a representation of its state, as for a GET request, but without the representation data enclosed in 
+	the response body. This is useful for retrieving the representation metadata in the response header, without having to transfer the entire representation. 
+	Uses include checking whether a page is available through the status code and quickly finding the size of a file (Content-Length).
+POST
+	The POST method requests that the target resource process the representation enclosed in the request according to the semantics of the target resource. 
+	For example, it is used for posting a message to an Internet forum, subscribing to a mailing list, or completing an online shopping transaction.
+PUT
+	The PUT method requests that the target resource create or update its state with the state defined by the representation enclosed in the request. 
+	A distinction from POST is that the client specifies the target location on the server.
+DELETE
+	The DELETE method requests that the target resource delete its state.
+CONNECT
+	The CONNECT method requests that the intermediary establish a TCP/IP tunnel to the origin server identified by the request target. 
+	It is often used to secure connections through one or more HTTP proxies with TLS. See HTTP CONNECT method.
+OPTIONS
+	The OPTIONS method requests that the target resource transfer the HTTP methods that it supports. 
+	This can be used to check the functionality of a web server by requesting '*' instead of a specific resource.
+TRACE
+	The TRACE method requests that the target resource transfer the received request in the response body. 
+	That way a client can see what (if any) changes or additions have been made by intermediaries.
+PATCH
+	The PATCH method requests that the target resource modify its state according to the partial update defined in the representation enclosed in the request. 
+	This can save bandwidth by updating a part of a file or document without having to transfer it entirely.
+	
+All general-purpose web servers are required to implement at least the GET and HEAD methods, and all other methods are considered optional by the specification.
