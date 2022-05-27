@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {TabsComponent} from './Pages/tabs/tabs.component';
 
 const routes: Routes = [
-  {path:'', component:TabsComponent}
+  {
+    path: '',
+    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
+  },
 ];
 @NgModule({
   imports: [
