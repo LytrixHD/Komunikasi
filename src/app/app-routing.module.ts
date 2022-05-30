@@ -4,7 +4,9 @@ import {AuthComponent} from './Pages/auth/auth.component';
 
 const routes: Routes = [
   {
-    path: '', component:AuthComponent
+    path: '',
+    loadChildren: () =>
+    import('./Pages/auth/auth.module').then((m)=> m.AuthModule)
   }
 ];
 @NgModule({
