@@ -2,6 +2,18 @@
   <h2>Login</h2>
   <p>Sign in to continue.</p>
 </div>
+<div class="lgoin-body-wrapper">
+  <ion-item>
+    <ion-label position="floating">user name</ion-label>
+    <ion-input [(ngModel)]= "name" type="text" required="true"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">password</ion-label>
+    <ion-input [(ngModel)]= "password" type="password" required="true"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="login()">Login</ion-button>
+</div>
 
 <div class="navigation-link">
   <ion-button [routerLink]="'register'">Register</ion-button>
