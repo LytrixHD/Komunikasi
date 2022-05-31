@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AuthComponent} from "./auth.component";
-import {LoginPage} from "./contents";
+import {LoginPage, RegisterPage} from "./contents";
 
 const routes: Routes = [
   {
@@ -9,7 +9,8 @@ const routes: Routes = [
     component:AuthComponent,
     children: [
       {path: 'login', component:LoginPage},
-      {path: '', component: LoginPage, pathMatch:'full'}
+      {path: '', component: LoginPage, pathMatch:'full'},
+      {path: 'register', component: RegisterPage, pathMatch:'full'}
     ]
   }
 ];
