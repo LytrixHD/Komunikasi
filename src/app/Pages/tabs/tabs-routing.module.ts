@@ -8,7 +8,11 @@ import {UserProfileComponent} from './contents/user-profile/user-profile.compone
 
 const routes: Routes = [
   {
-    path: '',
+    path:'',
+    redirectTo: 'tabs/home'
+  },
+  {
+    path: 'tabs',
     component: TabsPage,
     children:[
       {path:'home', component: HomeComponent},
