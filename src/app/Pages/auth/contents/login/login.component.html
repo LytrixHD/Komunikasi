@@ -4,17 +4,28 @@
 </div>
 <div class="lgoin-body-wrapper">
   <ion-item>
-    <ion-label position="floating">user name</ion-label>
+    <ion-label position="floating">Username</ion-label>
     <ion-input [(ngModel)]= "name" type="text" required="true"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">password</ion-label>
+    <ion-label position="floating">Password</ion-label>
     <ion-input [(ngModel)]= "password" type="password" required="true"></ion-input>
   </ion-item>
-  <ion-button expand="full" (click)="login()">Login</ion-button>
+  <div class="navigation-link">
+    <ion-button expand="full" (click)="login()">Login</ion-button>
+  </div>
 </div>
 
+<ion-item>
+  <ion-content class="deep-orange-text" >
+    <ion-text style="color:red">
+      {{this.errorMessage}}
+    </ion-text>
+  </ion-content>
+</ion-item>
+
+
 <div class="navigation-link">
-  <ion-button [routerLink]="'register'">Register</ion-button>
+  <ion-button [routerLink]="'../register'">Register</ion-button>
 </div>

@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component:AuthComponent,
     children: [
-      {path: 'login', component:LoginPage},
+      {path: 'login', component:LoginPage, pathMatch:'full'},
       {path: '', component: LoginPage, pathMatch:'full'},
       {path: 'register', component: RegisterPage, pathMatch:'full'}
     ]

@@ -8,20 +8,26 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  readonly endpoint = 'http://localhost:8080/demoLogin/api/';
+  readonly endpoint = 'http://192.168.32.232:8080/demoLogin/api/';
   zuSenden = '';
 
   constructor(
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {}
 
   //Works
-  validateLogin(user: USER){
-    /*
-    console.log('Api Service validate Login()');
+  validateLogin(user: USER): Observable<any>{
+    console.log('Auth Service validate Login()');
     this.zuSenden = ('{"username": "' + user.name + '", "password": "' + user.password + '"}');
+    console.log(this.zuSenden);
     return this.http.post(this.endpoint + 'users/validate', this.zuSenden);
-    */
-    this.router.navigate(['tabs']);
+  }
+
+  registerUser(user: USER): Observable<any>{
+    console.log('Auth Service Register user()');
+    this.zuSenden = ('{"username": "' + user.name + '", "password": "' + user.password + '"}');
+    console.log(this.zuSenden);
+    return this.http.post(this.endpoint + 'users/register', this.zuSenden);
   }
 }

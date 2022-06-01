@@ -43,6 +43,8 @@ After install depencies with `ionic lab` command you can run the projekt in the 
   - Finish Homescreen
   - Add Groups to Dashboard
   - Add Editing
+  - Add Cookies
+  - Finish Design
   
 ## Known Issues
 
