@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   public name: string;
   public password: string;
-  public errorMessage: string;
+  public message: string;
   public response: string;
 
   constructor(
@@ -24,14 +24,14 @@ export class LoginComponent implements OnInit {
   }
 
   checkForError(){
-    this.errorMessage = '';
+    this.message = '';
     if (!this.name){
-      this.errorMessage += 'Required field: Username';
+      this.message += 'Required field: Username';
     }
     if(!this.password){
-      this.errorMessage += '\nRequired field: Password';
+      this.message += '\nRequired field: Password';
     }
-    return this.errorMessage !== '';
+    return this.message !== '';
   }
 
   login() {
@@ -42,18 +42,17 @@ export class LoginComponent implements OnInit {
       };
       this.authService.validateLogin(user).subscribe(response => {
         //alert(response.status);
-        console.log(response.id);
+        console.log(response.accessToken);
         console.log(response.status);
-        if (response.id) {
-          this.response = 'Welcome user with Id: ' + response.id;
+        if (response.accessToken) {
           //user.id = response.id
           //this.demoService.user = user;
           this.router.navigate(['tabs']);
         }
          else{
-           this.response = response.status.toString();
+           this.message = response.status.toString();
         }
-        this.response = response.status.toString();
+        this.message = response.status.toString();
       });
     }
   }

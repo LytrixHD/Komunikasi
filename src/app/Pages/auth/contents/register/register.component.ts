@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  public errorMessage: string;
+  public message: string;
   public name: string;
   public password: string;
   public response: string;
@@ -22,14 +22,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   checkForError(){
-    this.errorMessage = '';
+    this.message = '';
     if (!this.name){
-      this.errorMessage += 'Required field: Username';
+      this.message += 'Required field: Username';
     }
     if(!this.password){
-      this.errorMessage += '\nRequired field: Password';
+      this.message += '\nRequired field: Password';
     }
-    if(this.errorMessage === ''){
+    if(this.message === ''){
       return false;
     }
     return true;
@@ -43,18 +43,21 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.registerUser(user).subscribe(response => {
         //alert(response.status);
-        console.log(response.id);
         console.log(response.status);
-        if (response.id) {
-          this.response = 'New user created, with ID: ' + response.id;
-          //user.id = response.id
-          //this.demoService.user = user;
-          //Hier kommt routing rein
-        }
-        else{
-          this.response = response.status.toString();
-        }
-        this.response = response.status.toString();
+          this.authService.validateLogin(user).subscribe(responseLogin =>{
+            //alert(response.status);
+            console.log(responseLogin.accessToken);
+            console.log(responseLogin.status);
+            if (responseLogin.accessToken) {
+              //user.id = response.id
+              //this.demoService.user = user;
+              this.router.navigate(['tabs']);
+            }
+            else{
+              this.message = responseLogin.status.toString();
+            }
+            this.message = responseLogin.status.toString();
+          });
       });
     }
   }
