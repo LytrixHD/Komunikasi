@@ -10,6 +10,6 @@ import {IonicModule} from '@ionic/angular';
 
 @NgModule({
   declarations: [AuthComponent, LoginPage, RegisterPage],
-  imports: [CommonModule, AuthRoutingModule, FormsModule, IonicModule],
+  imports: [CommonModule, AuthRoutingModule, FormsModule, IonicModule]
 })
 export class AuthModule { }

@@ -4,10 +4,10 @@
   - [TO DO](#to-do)
   - [Known Issues](#known-issues)
 
-# Komunikasi Projekt
+# Komunikasi
 
 Welcome to the Komunikasi Projekt! This App will be
-mainly for task/Group management. It stated off as a Idea
+mainly for task/Group management. It stated off as an Idea
 continued into a schoolprojekt, and finishes as the main Porjekt.
 
 > Some available accounts:

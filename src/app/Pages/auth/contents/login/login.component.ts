@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../../core/services/auth/auth.service';
 import {USER} from '../../../../models/auth/user.model';
 import {Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService
   ) {
   }
 
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
         console.log(response.accessToken);
         console.log(response.status);
         if (response.accessToken) {
+          this.cookieService.set('AccessToken', response.accessToken);
           //user.id = response.id
           //this.demoService.user = user;
           this.router.navigate(['tabs']);

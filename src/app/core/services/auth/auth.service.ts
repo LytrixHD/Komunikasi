@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {USER} from '../../../models/auth/user.model';
 import {Router} from '@angular/router';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  readonly endpoint = 'http://localhost:8080/demoLogin/api/';
+  readonly endpoint = 'http://192.168.114.232:8080/demoLogin/api/';
+  // readonly endpoint = 'http://localhost:8080/demoLogin/api/';
   zuSenden = '';
 
   constructor(
@@ -29,6 +30,6 @@ export class AuthService {
     console.log('Auth Service Register user()');
     this.zuSenden = ('{"username": "' + user.name + '", "password": "' + user.password + '"}');
     console.log(this.zuSenden);
-    return this.http.post(this.endpoint + 'users/Register', this.zuSenden);
+    return this.http.post(this.endpoint + 'users/register', this.zuSenden);
   }
 }
