@@ -11,12 +11,22 @@ import {Router} from "@angular/router";
 
 export class UserProfileComponent implements OnInit {
   public cookieTest: string;
+  public message: string;
+  public password: string;
 
   constructor(
     private cookieService: CookieService,
     private authService: AuthService,
     private router: Router
   ) { }
+
+  checkForError(){
+    this.message = '';
+    if(!this.password){
+      this.message += '\nRequired field: Password';
+    }
+    return this.message !== '';
+  }
 
   ngOnInit() {
     this.cookieTest = this.cookieService.get('AccessToken');
@@ -26,6 +36,12 @@ export class UserProfileComponent implements OnInit {
     this.authService.deleteUser().subscribe(response => {
       console.log(response.status);
       this.router.navigate(['']);
+    });
+  }
+
+  alterpassword(){
+    this.authService.alterPassword('123').subscribe(response =>{
+      console.log(response.status);
     });
   }
 }

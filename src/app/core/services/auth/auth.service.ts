@@ -35,11 +35,19 @@ export class AuthService {
     return this.http.post(this.endpoint + 'users/register', this.zuSenden);
   }
 
-  //Newly Created
+  //Works
   deleteUser(): Observable<any>{
     console.log('Auth Service Delete User()');
     this.zuSenden = ('{"accessToken": "' + this.cookieService.get('AccessToken') + '"}');
     console.log(this.zuSenden);
     return this.http.post(this.endpoint + 'users/delete', this.zuSenden);
+  }
+
+  //Works but Backend Error
+  alterPassword(password: string): Observable<any>{
+    console.log('alter Password');
+    this.zuSenden = ('{"accessToken": "' + this.cookieService.get('AccessToken') + '", "password": "' + password + '"}');
+    console.log(this.zuSenden);
+    return this.http.post(this.endpoint + 'users/alter', this.zuSenden);
   }
 }
