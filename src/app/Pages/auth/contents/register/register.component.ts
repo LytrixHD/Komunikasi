@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
       this.authService.registerUser(user).subscribe(response => {
         //alert(response.status);
         console.log(response.status);
+        this.message = response.status;
           this.authService.validateLogin(user).subscribe(responseLogin =>{
             //alert(response.status);
             console.log(responseLogin.accessToken);

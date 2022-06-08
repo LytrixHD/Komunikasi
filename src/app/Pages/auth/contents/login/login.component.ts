@@ -22,8 +22,7 @@ export class LoginComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   checkForError(){
     this.message = '';
