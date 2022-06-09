@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
-import {AuthService} from "../../../../core/services/auth/auth.service";
 import {Router} from "@angular/router";
+import {UserManagementService} from "../../../../core/services/userManagement/user-management.service";
 
 @Component({
   selector: 'app-user-profile',
@@ -16,7 +16,7 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     private cookieService: CookieService,
-    private authService: AuthService,
+    private authService: UserManagementService,
     private router: Router
   ) { }
 

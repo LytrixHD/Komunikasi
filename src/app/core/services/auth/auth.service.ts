@@ -15,12 +15,12 @@ export class AuthService {
 
   constructor(
     private router: Router,
-    private http: HttpClient,
-    private cookieService: CookieService
-  ) {}
+    private http: HttpClient
+  ) {
+  }
 
   //Works
-  validateLogin(user: USER): Observable<any>{
+  validateLogin(user: USER): Observable<any> {
     console.log('Auth Service validate Login()');
     this.zuSenden = ('{"username": "' + user.name + '", "password": "' + user.password + '"}');
     console.log(this.zuSenden);
@@ -28,26 +28,10 @@ export class AuthService {
   }
 
   //Works
-  registerUser(user: USER): Observable<any>{
+  registerUser(user: USER): Observable<any> {
     console.log('Auth Service Register user()');
     this.zuSenden = ('{"username": "' + user.name + '", "password": "' + user.password + '"}');
     console.log(this.zuSenden);
     return this.http.post(this.endpoint + 'users/register', this.zuSenden);
-  }
-
-  //Works
-  deleteUser(): Observable<any>{
-    console.log('Auth Service Delete User()');
-    this.zuSenden = ('{"accessToken": "' + this.cookieService.get('AccessToken') + '"}');
-    console.log(this.zuSenden);
-    return this.http.post(this.endpoint + 'users/delete', this.zuSenden);
-  }
-
-  //Works but Backend Error
-  alterPassword(password: string): Observable<any>{
-    console.log('alter Password');
-    this.zuSenden = ('{"accessToken": "' + this.cookieService.get('AccessToken') + '", "password": "' + password + '"}');
-    console.log(this.zuSenden);
-    return this.http.post(this.endpoint + 'users/alter', this.zuSenden);
   }
 }
