@@ -28,6 +28,7 @@ export class LoginFormComponent {
         //alert(response.status);
         if (response.accessToken) {
           this.cookieService.set('AccessToken', response.accessToken);
+          this.cookieService.set('UserName', user.name);
           //user.id = response.id
           //this.demoService.user = user;
           this.router.navigate(['tabs']);

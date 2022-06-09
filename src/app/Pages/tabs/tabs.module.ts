@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
+import {UserEditPage} from "../core";
+import {UserProfileComponent} from "./contents/user-profile/user-profile.component";
+import {ChangePWForm, DeleteUserForm} from "../../core/forms";
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { TabsPage } from './tabs.page';
     IonicModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, UserProfileComponent, UserEditPage, ChangePWForm, DeleteUserForm]
 })
 export class TabsPageModule {}

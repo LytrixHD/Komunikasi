@@ -5,6 +5,7 @@ import { TabsPage } from './tabs.page';
 import {HomeComponent} from './contents/home/home.component';
 import {DashboardComponent} from './contents/dashboard/dashboard.component';
 import {UserProfileComponent} from './contents/user-profile/user-profile.component';
+import {UserEditPage} from "../core";
 
 const routes: Routes = [
   {
@@ -17,9 +18,10 @@ const routes: Routes = [
     children:[
       {path:'home', component: HomeComponent},
       {path:'dashboard', component: DashboardComponent},
-      {path:'user-profile', component: UserProfileComponent}
+      {path:'user-profile', component: UserProfileComponent},
+      {path:'EditUser', component: UserEditPage}
     ]
-  },
+  }
 ];
 
 @NgModule({

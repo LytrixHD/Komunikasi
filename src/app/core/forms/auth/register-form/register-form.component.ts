@@ -33,6 +33,8 @@ export class RegisterFormComponent{
           console.log(responseLogin.accessToken);
           console.log(responseLogin.status);
           if (responseLogin.accessToken) {
+            this.cookieService.set('AccessToken', response.accessToken);
+            this.cookieService.set('UserName', user.name);
             //user.id = response.id
             //this.demoService.user = user;
             this.router.navigate(['tabs']);

@@ -1,19 +1,13 @@
-<ion-button (click)="deleteUser()">
-  User Löschen
-</ion-button>
+<ion-header>
+  <ion-item>
+    <div class="header">
+      {{this.cookieService.get('UserName')}}
+    </div>
+  </ion-item>
+</ion-header>
 
-<ion-item>
-  <ion-label position="floating">New Password</ion-label>
-  <ion-input [(ngModel)]= "password" type="password" required="true"></ion-input>
-</ion-item>
-  <ion-button expand="full" (click)="alterpassword()">Change Password</ion-button>
-
-<ion-item>
-  <ion-content class="deep-orange-text" >
-    <ion-text style="color:red">
-      {{this.message}}
-    </ion-text>
-  </ion-content>
-</ion-item>
-
-<ion-text>{{this.cookieTest}}</ion-text>
+<ion-content>
+  <div class="navigation-link">
+    <ion-button routerLink="../EditUser">Edit user</ion-button>
+  </div>
+</ion-content>
