@@ -53,5 +53,7 @@
   <div class="navigation-link">
     <ion-button [disabled]="!name.valid || !password.valid" (click)="login(name.value, password.value)">Login</ion-button>
   </div>
-  <ion-button [routerLink]="'../register'">Register</ion-button>
+    <div class="navigation-link">
+    <ion-button [routerLink]="'../register'">Register</ion-button>
+  </div>
 </form>

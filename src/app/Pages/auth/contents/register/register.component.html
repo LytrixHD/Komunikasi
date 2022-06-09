@@ -1,29 +1,9 @@
 <div class="login-header-wrapper">
   <h2>Register</h2>
-  <p>Fill the form to continue!</p>
-</div>
-<div class="lgoin-body-wrapper">
-  <ion-item>
-    <ion-label position="floating">Username (Required)</ion-label>
-    <ion-input [(ngModel)]= "name" type="text" required="true"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Password (Required)</ion-label>
-    <ion-input [(ngModel)]= "password" type="password" required="true"></ion-input>
-  </ion-item>
-  <div class="navigation-link">
-    <ion-button expand="full" (click)="register()">Register</ion-button>
-  </div>
+  <p>Fill the form to Register!</p>
 </div>
 
-<ion-item>
-  <ion-content class="deep-orange-text" >
-    <ion-text style="color:red">
-      {{this.message}}
-    </ion-text>
-  </ion-content>
-</ion-item>
+<app-register-form></app-register-form>
 
 <div class="navigation-link">
   <ion-button [routerLink]="'../login'">Back to login</ion-button>

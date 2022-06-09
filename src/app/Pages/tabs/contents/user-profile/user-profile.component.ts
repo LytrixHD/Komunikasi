@@ -40,7 +40,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   alterpassword(){
-    this.authService.alterPassword('123').subscribe(response =>{
+    this.authService.alterPassword(this.password).subscribe(response =>{
       console.log(response.status);
     });
   }

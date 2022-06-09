@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {USER} from "../../../models/auth/user.model";
-import {AuthService} from "../../services/auth/auth.service";
+import {USER} from "../../../../models/auth/user.model";
+import {AuthService} from "../../../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 

@@ -1,0 +1,57 @@
+<form>
+  <div class="form-group">
+    <ion-item>
+      <ion-label position="floating" for="name">Name</ion-label>
+      <ion-input
+        ngModel name="name"
+        id="name"
+        required
+        minlength="3"
+        maxlength="10"
+        #name=ngModel
+        type="text"
+        class="form-control"></ion-input>
+      <div class="alert-danger" *ngIf="name.touched && !name.valid">
+        <div class="alert-danger" *ngIf="name.errors.required">
+          Name is required
+        </div>
+        <div class="alert-danger" *ngIf="name.errors.minlength">
+          Name has to have at least {{name.errors.minlength.requiredLength}} characters
+        </div>
+      </div>
+    </ion-item>
+  </div>
+
+  <div class="from-group">
+    <ion-item>
+      <ion-label position="floating" for="password">Password</ion-label>
+      <ion-input
+        ngModel
+        name="password"
+        id="password"
+        required
+        minlength="3"
+        maxlength="10"
+        #password=ngModel
+        type="password"
+        class="form-control"></ion-input>
+      <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+        <div class="alert-danger" *ngIf="password.errors.required">
+          Password is required
+        </div>
+        <div class="alert-danger" *ngIf="password.errors.minlength">
+          Password has to have at least {{password.errors.minlength.requiredLength}} characters
+        </div>
+      </div>
+    </ion-item>
+  </div>
+
+  <ion-text>
+    {{message}}
+  </ion-text>
+
+  <div class="navigation-link">
+    <ion-button [disabled]="!name.valid || !password.valid" (click)="register(name.value, password.value)">Register</ion-button>
+  </div>
+
+</form>
