@@ -16,6 +16,7 @@ continued into a schoolprojekt, and finishes as the main Porjekt.
 ## Running App
 
 After install depencies with `ionic lab` command you can run the projekt in the with it Provided Phone view easily.
+Mind it does Only work with the Backend (also available on my account https://github.com/LytrixHD/KomunikasiBackEnd)
 
 ## Rules
 
