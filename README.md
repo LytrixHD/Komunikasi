@@ -47,6 +47,7 @@ After install depencies with `ionic lab` command you can run the projekt in the 
   - Add Cookies
   - Finish Design
   - Add pattern for passwords (disclude {}""''\)
+  - add Profile Picture
   
 ## Known Issues
 
