@@ -32,6 +32,7 @@ After install depencies with `ionic lab` command you can run the projekt in the 
 - CSS template engine is SCSS
 - Ngx Cookie Service used to handle cookies
 - User ids gererated Serverbased
+- Uses Template Driven Forms
 
 ## TO DO
 
