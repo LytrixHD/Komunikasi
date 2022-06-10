@@ -46,12 +46,40 @@
     </ion-item>
   </div>
 
-  <ion-text>
-    {{message}}
-  </ion-text>
+  <div class="from-group">
+    <ion-item>
+      <ion-label position="floating" for="confirmPassword">Confirm Password</ion-label>
+      <ion-input
+        ngModel
+        name="confirmPassword"
+        id="confirmPassword"
+        required
+        minlength="3"
+        maxlength="10"
+        #confirmPassword=ngModel
+        type="password"
+        class="form-control"></ion-input>
+      <div class="alert alert-danger" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+        <div class="alert-danger" *ngIf="confirmPassword.errors.required">
+          Password is required
+        </div>
+        <div class="alert-danger" *ngIf="confirmPassword.errors.minlength">
+          Password has to have at least {{confirmPassword.errors.minlength.requiredLength}} characters
+        </div>
+      </div>
+    </ion-item>
+  </div>
+  <ion-item>
+    <div class="alert-danger">
+      <ion-text>
+        {{message}}
+      </ion-text>
+    </div>
+  </ion-item>
+
 
   <div class="navigation-link">
-    <ion-button [disabled]="!name.valid || !password.valid" (click)="register(name.value, password.value)">Register</ion-button>
+    <ion-button [disabled]="name.invalid || password.invalid || confirmPassword.invalid" (click)="register(name.value, password.value, confirmPassword.value)">Register</ion-button>
   </div>
 
 </form>

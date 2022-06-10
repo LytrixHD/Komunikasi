@@ -19,7 +19,12 @@ export class RegisterFormComponent{
     private cookieService: CookieService
   ) {}
 
-  register(formName: string, formPassword: string) {
+  register(formName: string, formPassword: string, formConfirmPassword: string) {
+    this.message = '';
+    if(formPassword !== formConfirmPassword){
+      this.message = 'Passwords do not Match!';
+      return null;
+    }
     const user: USER = {
       name: formName,
       password: formPassword
@@ -33,7 +38,7 @@ export class RegisterFormComponent{
           console.log(responseLogin.accessToken);
           console.log(responseLogin.status);
           if (responseLogin.accessToken) {
-            this.cookieService.set('AccessToken', response.accessToken);
+            this.cookieService.set('AccessToken', responseLogin.accessToken);
             this.cookieService.set('UserName', user.name);
             //user.id = response.id
             //this.demoService.user = user;
