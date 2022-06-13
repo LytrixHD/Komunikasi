@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button color="danger">
+      <ion-button color="danger" (click)="addClassAlert()">
         <ion-icon name="add-circle-outline" size="large" >
         </ion-icon>
       </ion-button>
@@ -17,5 +17,19 @@
 </ion-header>
 
 <ion-content>
-  <app-classes-form></app-classes-form>
+  <p *ngFor="let classes of classes">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Group</ion-card-subtitle>
+        <ion-card-title>{{classes.classname}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-button color="light" size="">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button color="dark" expand="full" routerLink="../Subgroup/{{classes.id}}/{{classes.classname}}">View</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </p>
 </ion-content>

@@ -10,8 +10,7 @@ import {Observable} from "rxjs";
 export class ClassManagementService {
   // readonly endpoint = 'http://10.13.45.122:8080/demoLogin/api/';
   readonly endpoint = 'http://localhost:8080/komunikasi/api/';
-
-  codec = new HttpUrlEncodingCodec();
+  private zuSenden: string;
 
   constructor(
     private router: Router,
@@ -19,11 +18,18 @@ export class ClassManagementService {
     private cookieService: CookieService
   ) {}
 
-  //New
+
+  //Works
   getUserClasses(): Observable<any>{
-    console.log('User Management Service Delete User()');
+    console.log('Class Management getUserClasses()');
     const myParams = new HttpParams().set('id', this.cookieService.get('AccessToken'));
     console.log(myParams);
     return this.http.get(this.endpoint + 'users/getclasses', { params: myParams});
+  }
+
+  createClass(className: string): Observable<any>{
+   console.log('User Management createClass()');
+    this.zuSenden = ('{"accessToken": "' + this.cookieService.get('AccessToken') + '", "classname": "' + className +'"}');
+   return this.http.post(this.endpoint + 'classes/create', this.zuSenden);
   }
 }
