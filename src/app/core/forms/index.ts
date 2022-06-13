@@ -2,3 +2,4 @@ export {LoginFormComponent as LoginForm} from './auth/login-form/login-form.comp
 export {RegisterFormComponent as RegisterForm} from './auth/register-form/register-form.component';
 export {ChangePasswordFormComponent as ChangePWForm} from './usermanagement/change-password-form/change-password-form.component';
 export {DeleteUserFormComponent as DeleteUserForm} from './usermanagement/delete-user-form/delete-user-form.component';
+export {ClassesFormComponent as ClassesForm} from './classesmanagement/classes-form/classes-form.component';

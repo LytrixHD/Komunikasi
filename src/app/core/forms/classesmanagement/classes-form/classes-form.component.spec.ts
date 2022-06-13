@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { EditGroupsComponent } from './edit-groups.component';
+import { ClassesFormComponent } from './classes-form.component';
 
-describe('EditGroupsComponent', () => {
-  let component: EditGroupsComponent;
-  let fixture: ComponentFixture<EditGroupsComponent>;
+describe('ClassesFormComponent', () => {
+  let component: ClassesFormComponent;
+  let fixture: ComponentFixture<ClassesFormComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditGroupsComponent ],
+      declarations: [ ClassesFormComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EditGroupsComponent);
+    fixture = TestBed.createComponent(ClassesFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

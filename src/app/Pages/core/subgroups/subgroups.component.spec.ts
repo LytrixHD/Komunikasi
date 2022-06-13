@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { EditTasksComponent } from './edit-tasks.component';
+import { SubgroupsComponent } from './subgroups.component';
 
-describe('EditTasksComponent', () => {
-  let component: EditTasksComponent;
-  let fixture: ComponentFixture<EditTasksComponent>;
+describe('SubgroupsComponent', () => {
+  let component: SubgroupsComponent;
+  let fixture: ComponentFixture<SubgroupsComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditTasksComponent ],
+      declarations: [ SubgroupsComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EditTasksComponent);
+    fixture = TestBed.createComponent(SubgroupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

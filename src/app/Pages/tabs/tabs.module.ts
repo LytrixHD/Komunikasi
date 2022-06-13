@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
-import {UserEditPage} from "../core";
+import {SubGroupPage, UserEditPage} from "../core";
 import {UserProfileComponent} from "./contents/user-profile/user-profile.component";
-import {ChangePWForm, DeleteUserForm} from "../../core/forms";
+import {ChangePWForm, ClassesForm, DeleteUserForm} from "../../core/forms";
+import {DashboardComponent} from "./contents/dashboard/dashboard.component";
+import {HomeComponent} from "./contents/home/home.component";
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import {ChangePWForm, DeleteUserForm} from "../../core/forms";
     IonicModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage, UserProfileComponent, UserEditPage, ChangePWForm, DeleteUserForm]
+  declarations: [HomeComponent, SubGroupPage,TabsPage, UserProfileComponent, DashboardComponent, UserEditPage, ChangePWForm, DeleteUserForm, ClassesForm]
 })
 export class TabsPageModule {}
