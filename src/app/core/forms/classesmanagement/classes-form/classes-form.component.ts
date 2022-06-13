@@ -11,7 +11,9 @@ export class ClassesFormComponent implements OnInit {
 
   constructor(
     private classManagement: ClassManagementService
-  ) { }
+  ) {
+    setInterval(()=> { this.loadClasses(); }, 60000);
+  }
 
   ngOnInit() {
     this.loadClasses();

@@ -20,6 +20,7 @@ import {HomeComponent} from "./contents/home/home.component";
     IonicModule,
     TabsPageRoutingModule
   ],
-  declarations: [HomeComponent, SubGroupPage,TabsPage, UserProfileComponent, DashboardComponent, UserEditPage, ChangePWForm, DeleteUserForm, ClassesForm]
+  // eslint-disable-next-line max-len
+  declarations: [HomeComponent, SubGroupPage, TabsPage, UserProfileComponent, DashboardComponent, UserEditPage, ChangePWForm, DeleteUserForm, ClassesForm]
 })
 export class TabsPageModule {}
