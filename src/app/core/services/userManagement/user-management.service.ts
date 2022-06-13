@@ -32,7 +32,6 @@ export class UserManagementService {
       console.log('User Management Service Delete User()');
       const myParams = new HttpParams().set('id', this.cookieService.get('AccessToken'));
       console.log(myParams);
-      console.log(this.http.delete(this.endpoint + 'users/delete', { params: myParams}));
       return this.http.delete(this.endpoint + 'users/delete', { params: myParams});
     }
 
