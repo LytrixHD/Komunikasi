@@ -3,6 +3,7 @@
   - [About App](#about-app)
   - [TO DO](#to-do)
   - [Known Issues](#known-issues)
+# THIS PROJECT HAS BEEN MOVED INTO A NEW ENVIROMENT! CHECK MY PROFILE FOR THE UPDATED REPO
 
 # Komunikasi
 
