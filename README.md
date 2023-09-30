@@ -3,8 +3,7 @@
   - [About App](#about-app)
   - [TO DO](#to-do)
   - [Known Issues](#known-issues)
-# THIS PROJECT HAS BEEN MOVED INTO A NEW ENVIROMENT! CHECK MY PROFILE FOR THE UPDATED REPO
-
+  - 
 # Komunikasi
 
 Welcome to the Komunikasi Projekt! This App will be
@@ -17,7 +16,7 @@ continued into a schoolprojekt, and finishes as the main Porjekt.
 ## Running App
 
 After install depencies with `ionic lab` command you can run the projekt in the with it Provided Phone view easily.
-Mind it does Only work with the Backend (also available on my account https://github.com/LytrixHD/KomunikasiBackEnd)
+Mind it does Only work with the Backend.
 
 ## Rules
 
