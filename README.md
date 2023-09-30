@@ -16,15 +16,7 @@ continued into a schoolprojekt, and finishes as the main Porjekt.
 ## Running App
 
 After install depencies with `ionic lab` command you can run the projekt in the with it Provided Phone view easily.
-Mind it does Only work with the Backend.
-
-## Rules
-
-- To be added
-
-## Roles
-
-- To be added
+Mind it does Only work with the Backend which is not available to the public.
 
 ## About App
 
